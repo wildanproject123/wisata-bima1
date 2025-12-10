@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wisata Bima</title>
+<style>
+body {font-family: Arial, sans-serif; margin:0; padding:0; background:#948686;}
+header {background:#1E90FF; color:white; padding:20px; text-align:center;}
+nav a {color:white; margin:0 15px; text-decoration:none; font-weight:bold;}
+.hero-slider {position:relative; height:500px; overflow:hidden;}
+.hero-slide {position:absolute; width:100%; height:100%; background-size:cover; background-position:center; display:none; color:white; font-size:48px; display:flex; align-items:center; justify-content:center; text-shadow:2px 2px 5px black;}
+.destinations-container {overflow:hidden; padding:20px;}
+.destinations {display:flex; transition: transform 0.5s ease;}
+.card {background:white; margin:10px; min-width:300px; border-radius:10px; overflow:hidden; box-shadow:0 4px 8px rgba(0,0,0,0.2); cursor:pointer; transition: transform 0.3s;}
+.card:hover {transform: scale(1.05);}
+.card img {width:100%; height:200px; object-fit:cover;}
+.card-content {padding:15px;}
+section {padding:40px 20px;}
+.lightbox {display:none; position:fixed; z-index:1000; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.8); align-items:center; justify-content:center;}
+.lightbox img {max-width:90%; max-height:80%; border-radius:10px;}
+footer {background:#333; color:white; text-align:center; padding:15px;}
+button, a.button {display:inline-block; padding:8px 12px; background:#25D366; color:white; border-radius:5px; text-decoration:none; margin-top:10px;}
+</style>
+</head>
+<body>
+
+<header>
+<h1>Wisata Bima</h1>
+<nav>
+<a href="#destinations">Destinasi</a>
+<a href="#sewa-tourguide">Sewa Tour Guide</a>
+<a href="#map">Peta</a>
+<a href="#contact">Kontak</a>
+</nav>
+</header>
+
+<!-- Hero Slider -->
+<div class="hero-slider">
+    <div class="hero-slide" style="background-image:url('images/hero1.jpg'); display:flex;">Jelajahi Keindahan Bima 1</div>
+    <div class="hero-slide" style="background-image:url('images/hero2.jpg');">Jelajahi Keindahan Bima 2</div>
+    <div class="hero-slide" style="background-image:url('images/hero3.jpg');">Jelajahi Keindahan Bima 3</div>
+</div>
+
+<!-- Destinasi Slider -->
+<section id="destinations" style="background:#2f5d63;">
+<h2 style="text-align:center;">Destinasi Wisata Bima</h2>
+<div class="destinations-container">
+    <div class="destinations" id="destinations-slider">
+        <div class="card" onclick="openLightbox('images/pantai-lawata-large.jpg')">
+            <img src="images/pantai-lawata.jpg" alt="Pantai Lawata">
+            <div class="card-content"><h3>Pantai Lawata</h3><p>Pantai cantik dengan pasir putih.</p></div>
+        </div>
+        <div class="card" onclick="openLightbox('images/pantai-cili-large.jpg')">
+            <img src="images/pantai-cili.jpg" alt="Pantai Cili">
+            <div class="card-content"><h3>Pantai Cili</h3><p>Pantai tenang untuk bersantai.</p></div>
+        </div>
+        <div class="card" onclick="openLightbox('images/tanjung-meria-large.jpg')">
+            <img src="images/tanjung-meria.jpg" alt="Tanjung Meria">
+            <div class="card-content"><h3>Tanjung Meria</h3><p>Destinasi cantik dengan panorama laut.</p></div>
+        </div>
+        <div class="card" onclick="openLightbox('images/pulau-kelapa-large.jpg')">
+            <img src="images/pulau-kelapa.jpg" alt="Pulau Kelapa">
+            <div class="card-content"><h3>Pulau Kelapa</h3><p>Pulau kecil dengan pantai sepi, cocok snorkeling.</p></div>
+        </div>
+        <div class="card" onclick="openLightbox('images/desa-sambori-large.jpg')">
+            <img src="images/desa-sambori.jpg" alt="Desa Sambori">
+            <div class="card-content"><h3>Desa Sambori</h3><p>Desa tradisional dengan budaya lokal.</p></div>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- Sewa Jasa Tour Guide -->
+<section id="sewa-tourguide" style="background:#fff8e1;">
+<h2 style="text-align:center;">Sewa Jasa Tour Guide</h2>
+<p style="text-align:center;">Pilih tour guide profesional dan nikmati wisata Bima dengan nyaman.</p>
+<div style="display:flex; flex-wrap:wrap; justify-content:center; margin-top:30px;">
+
+<!-- Tour Guide Sari -->
+<div style="background:white; margin:10px; width:320px; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,0.2); overflow:hidden;">
+  <img src="images/guide1.jpg" alt="Tour Guide 1" style="width:100%; height:200px; object-fit:cover;">
+  <div style="padding:15px;">
+    <h3>Amin Tour Guide</h3>
+    <p>Pengalaman 5 tahun memandu wisatawan di Bima, bahasa Indonesia & Inggris.</p>
+    <p><strong>Paket Layanan:</strong></p>
+    <ul style="text-align:left;">
+      <li>1 hari: Rp 500.000</li>
+      <li>1 minggu: Rp 3.000.000</li>
+      <li>1 bulan: Rp 10.000.000</li>
+    </ul>
+
+    <!-- Pembayaran QRIS -->
+    <div style="margin-top:15px;">
+      <p>Bayar langsung via QRIS:</p>
+      <img src="images/qris-amin.png" alt="QRIS Amin" style="width:150px; height:150px;">
+      <a href="https://wa.me/6281234567890?text=Halo%20Amin%2C%20saya%20sudah%20membayar%20via%20QRIS" target="_blank" class="button">Konfirmasi via WhatsApp</a>
+    </div>
+
+    <!-- Pembayaran Kripto -->
+    <div style="margin-top:15px;">
+      <p>Bayar menggunakan kripto:</p>
+      <p><strong>Bitcoin (BTC):</strong> 1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa</p>
+      <img src="images/qrcode-btc.png" alt="QR BTC" style="width:150px; height:150px;">
+      <a href="https://wa.me/6281234567890?text=Halo%20Amin%2C%20saya%20sudah%20membayar%20via%20BTC" target="_blank" class="button">Konfirmasi via WhatsApp</a>
+
+      <p><strong>Ethereum (ETH):</strong> 0xAbC1234567890DefABC1234567890DefABC12345</p>
+      <img src="images/qrcode-eth.png" alt="QR ETH" style="width:150px; height:150px;">
+      <a href="https://wa.me/6281234567890?text=Halo%20Amin%2C%20saya%20sudah%20membayar%20via%20ETH" target="_blank" class="button">Konfirmasi via WhatsApp</a>
+    </div>
+
+    <!-- Tombol WhatsApp per durasi -->
+    <div style="margin-top:15px;">
+      <p>Pilih durasi sewa dan chat langsung ke WhatsApp:</p>
+      <a href="https://wa.me/6281234567890?text=Halo%20Amin%2C%20saya%20ingin%20menyewa%20tour%20guide%20untuk%201%20hari" target="_blank" class="button">1 Hari</a>
+      <a href="https://wa.me/6281234567890?text=Halo%20Amin%2C%20saya%20ingin%20menyewa%20tour%20guide%20untuk%201%20minggu" target="_blank" class="button">1 Minggu</a>
+      <a href="https://wa.me/6281234567890?text=Halo%20Amin%2C%20saya%20ingin%20menyewa%20tour%20guide%20untuk%201%20bulan" target="_blank" class="button">1 Bulan</a>
+    </div>
+
+  </div>
+</div>
+
+
+
+</div>
+</section>
+
+<!-- Peta Bima -->
+<section id="map">
+<h2 style="text-align:center;">Peta Bima</h2>
+<div class="map" style="width:100%; height:400px;">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39548.1361342352!2d118.7009125!3d-8.4551835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2df27ff4d5c09c23%3A0x501e9b70a9d1c0!2sBima%2C%20West%20Nusa%20Tenggara%2C%20Indonesia!5e0!3m2!1sen!2sid!4v1700000000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</div>
+</section>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+<img id="lightbox-img" src="" alt="Gambar">
+</div>
+
+<footer id="contact">
+<p>Kontak: wildan230298@gmail.com| Telp: +62 877-7360-9974</p>
+<p>&copy; 2025 Wisata Bima</p>
+</footer>
+
+<script>
+// Hero slider otomatis
+let heroIndex = 0;
+const slides = document.querySelectorAll('.hero-slide');
+function showHeroSlide() {
+    slides.forEach((slide)=> slide.style.display='none');
+    heroIndex++;
+    if(heroIndex>slides.length) heroIndex=1;
+    slides[heroIndex-1].style.display='flex';
+    setTimeout(showHeroSlide,4000);
+}
+showHeroSlide();
+
+// Destinasi slider otomatis
+const destSlider = document.getElementById('destinations-slider');
+let destIndex = 0;
+function slideDestinations() {
+    destIndex -= 310;
+    if(Math.abs(destIndex) >= destSlider.scrollWidth/2) destIndex = 0;
+    destSlider.style.transform = `translateX(${destIndex}px)`;
+    setTimeout(slideDestinations,3000);
+}
+slideDestinations();
+
+// Lightbox
+function openLightbox(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').style.display = 'flex';
+}
+function closeLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+}
+</script>
+
+</body>
+</html>
